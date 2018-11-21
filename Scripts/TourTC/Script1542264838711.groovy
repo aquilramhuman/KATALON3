@@ -26,7 +26,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.phptravels.net/admin')
 
-WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_email'), 'akhilraam1@gmail.com')
+WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_email'), 'akhillraam1@gmail.com')
 
 WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_password'), 'conc.HNO3')
 
