@@ -26,9 +26,9 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.phptravels.net/admin')
 
-WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_email'), 'binu.inapp@hmail.com')
+WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_email'), 'akhilraam1@gmail.com')
 
-WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_password'), 'binukuthalingam')
+WebUI.setText(findTestObject('AddTour/Page_Administator Login/input_password'), 'conc.HNO3')
 
 WebUI.click(findTestObject('AddTour/Page_Administator Login/button_Login'))
 
@@ -46,19 +46,22 @@ WebUI.setText(findTestObject('glovariable/fieldData', [('dynamicvariable') : 'to
 
 WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'maxadult']), internalData.getValue(i++, 1))
 
-WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'adultprice']), internalData.getValue(i++, 1))
+WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'adultprice']), internalData.getValue(i++, 
+        1))
 
 WebUI.click(findTestObject('AddTour/childbutton'))
 
 WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'maxchild']), internalData.getValue(i++, 1))
 
-WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'childprice']), internalData.getValue(i++, 1))
+WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'childprice']), internalData.getValue(i++, 
+        1))
 
 WebUI.click(findTestObject('AddTour/InfantButton'))
 
 WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'maxinfant']), internalData.getValue(i++, 1))
 
-WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'infantprice']), internalData.getValue(i++, 1))
+WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'infantprice']), internalData.getValue(i++, 
+        1))
 
 WebUI.click(findTestObject('AddTour/StarDropdown'))
 
@@ -66,7 +69,8 @@ WebUI.click(findTestObject('AddTour/StarSelection', [('value') : internalData.ge
 
 WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'tourdays']), internalData.getValue(i++, 1))
 
-WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'tournights']), internalData.getValue(i++, 1))
+WebUI.setText(findTestObject('glovariable/fielddata', [('dynamicvariable') : 'tournights']), internalData.getValue(i++, 
+        1))
 
 WebUI.click(findTestObject('AddTour/TourTypeDrop'))
 
@@ -86,20 +90,18 @@ WebUI.delay(5)
 
 WebUI.click(findTestObject('AddTour/Select All'))
 
-def tourfacilitiesinclude = findTestData('DataFile For TourCreation/Inclusions')
+def tourfacilitiesinclude = findTestData('TourDB/Inclusions')
 
 for (def index : (1..tourfacilitiesinclude.getRowNumbers())) {
-    WebUI.click(findTestObject('AddTour/IncludeFacilities', [('includefacilities') : tourfacilitiesinclude.getValue(
-                    1, index)]))
+    WebUI.click(findTestObject('AddTour/IncludeFacilities', [('includefacilities') : tourfacilitiesinclude.getValue(1, index)]))
 }
 
 WebUI.click(findTestObject('AddTour/ClickExclusions'))
 
-def tourfacilitiesexclude = findTestData('DataFile For TourCreation/Exclusions')
+def tourfacilitiesexclude = findTestData('TourDB/Exclusions')
 
 for (def indexe : (1..tourfacilitiesexclude.getRowNumbers())) {
-    WebUI.click(findTestObject('AddTour/ExcludeFacilities', [('excludefacilities') : tourfacilitiesexclude.getValue(
-                    1, indexe)]))
+    WebUI.click(findTestObject('AddTour/ExcludeFacilities', [('excludefacilities') : tourfacilitiesexclude.getValue(1, indexe)]))
 }
 
 WebUI.click(findTestObject('AddTour/SubmitTour'))
